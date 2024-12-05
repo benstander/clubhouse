@@ -1,101 +1,136 @@
+"use client"
 import Image from "next/image";
+import Link from "next/link";
+import Header from "./components/Header";
 
 export default function Home() {
   return (
-    <div className="grid grid-rows-[20px_1fr_20px] items-center justify-items-center min-h-screen p-8 pb-20 gap-16 sm:p-20 font-[family-name:var(--font-geist-sans)]">
-      <main className="flex flex-col gap-8 row-start-2 items-center sm:items-start">
+    <div className="bg-white">
+      <Header />
+
+      <section className="relative w-full h-[60vh]">
         <Image
-          className="dark:invert"
-          src="/next.svg"
-          alt="Next.js logo"
-          width={180}
-          height={38}
+          src="/masters-hero-image.webp"
+          alt="The Masters Golf Tournament"
+          fill
+          className="object-cover"
           priority
         />
-        <ol className="list-inside list-decimal text-sm text-center sm:text-left font-[family-name:var(--font-geist-mono)]">
-          <li className="mb-2">
-            Get started by editing{" "}
-            <code className="bg-black/[.05] dark:bg-white/[.06] px-1 py-0.5 rounded font-semibold">
-              src/app/page.tsx
-            </code>
-            .
-          </li>
-          <li>Save and see your changes instantly.</li>
-        </ol>
-
-        <div className="flex gap-4 items-center flex-col sm:flex-row">
-          <a
-            className="rounded-full border border-solid border-transparent transition-colors flex items-center justify-center bg-foreground text-background gap-2 hover:bg-[#383838] dark:hover:bg-[#ccc] text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5"
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
+        <div className="absolute bottom-8 left-6 md:left-12 flex flex-col gap-4">
+          <h2 className="text-white text-3xl font-bold drop-shadow-lg">
+            ALL YOUR GOLFING NEEDS IN ONE PLACE
+          </h2>
+          <Link 
+            href="/search"
+            className="bg-white text-green-800 px-8 py-2 rounded-md w-48 text-lg hover:bg-green-100 transition-colors text-center"
           >
-            <Image
-              className="dark:invert"
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={20}
-              height={20}
-            />
-            Deploy now
-          </a>
-          <a
-            className="rounded-full border border-solid border-black/[.08] dark:border-white/[.145] transition-colors flex items-center justify-center hover:bg-[#f2f2f2] dark:hover:bg-[#1a1a1a] hover:border-transparent text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5 sm:min-w-44"
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Read our docs
-          </a>
+            Explore Clubs
+          </Link>
         </div>
-      </main>
-      <footer className="row-start-3 flex gap-6 flex-wrap items-center justify-center">
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/file.svg"
-            alt="File icon"
-            width={16}
-            height={16}
-          />
-          Learn
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/window.svg"
-            alt="Window icon"
-            width={16}
-            height={16}
-          />
-          Examples
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/globe.svg"
-            alt="Globe icon"
-            width={16}
-            height={16}
-          />
-          Go to nextjs.org →
-        </a>
-      </footer>
+      </section>
+
+      <section className="px-6 md:px-12 py-8 bg-white">
+        <h2 className="text-2xl font-bold mb-6">New Listings</h2>
+        <div className="overflow-hidden">
+          <div className="flex gap-4 w-[calc(100%+240px)]">
+            {/* Card 1 */}
+            <div className="bg-white rounded-lg shadow-md overflow-hidden min-w-[240px]">
+              <div className="h-32 relative">
+                <Image
+                  src="/placeholder-club.jpg"
+                  alt="Golf Club"
+                  fill
+                  className="object-cover"
+                />
+              </div>
+              <div className="p-3">
+                <h3 className="font-semibold">Titleist Pro V1</h3>
+                <p className="text-gray-600">$45.99</p>
+              </div>
+            </div>
+
+            {/* Card 2 */}
+            <div className="bg-white rounded-lg shadow-md overflow-hidden min-w-[240px]">
+              <div className="h-32 relative">
+                <Image
+                  src="/placeholder-club.jpg"
+                  alt="Golf Club"
+                  fill
+                  className="object-cover"
+                />
+              </div>
+              <div className="p-3">
+                <h3 className="font-semibold">TaylorMade Driver</h3>
+                <p className="text-gray-600">$299.99</p>
+              </div>
+            </div>
+
+            {/* Card 3 */}
+            <div className="bg-white rounded-lg shadow-md overflow-hidden min-w-[240px]">
+              <div className="h-32 relative">
+                <Image
+                  src="/placeholder-club.jpg"
+                  alt="Golf Club"
+                  fill
+                  className="object-cover"
+                />
+              </div>
+              <div className="p-3">
+                <h3 className="font-semibold">Callaway Irons Set</h3>
+                <p className="text-gray-600">$799.99</p>
+              </div>
+            </div>
+
+            {/* Card 4 */}
+            <div className="bg-white rounded-lg shadow-md overflow-hidden min-w-[240px]">
+              <div className="h-32 relative">
+                <Image
+                  src="/placeholder-club.jpg"
+                  alt="Golf Club"
+                  fill
+                  className="object-cover"
+                />
+              </div>
+              <div className="p-3">
+                <h3 className="font-semibold">Ping Putter</h3>
+                <p className="text-gray-600">$199.99</p>
+              </div>
+            </div>
+
+            {/* Card 5 */}
+            <div className="bg-white rounded-lg shadow-md overflow-hidden min-w-[240px]">
+              <div className="h-32 relative">
+                <Image
+                  src="/placeholder-club.jpg"
+                  alt="Golf Club"
+                  fill
+                  className="object-cover"
+                />
+              </div>
+              <div className="p-3">
+                <h3 className="font-semibold">Golf Bag</h3>
+                <p className="text-gray-600">$149.99</p>
+              </div>
+            </div>
+
+            {/* Card 6 (Partial) */}
+            <div className="bg-white rounded-lg shadow-md overflow-hidden min-w-[240px]">
+              <div className="h-32 relative">
+                <Image
+                  src="/placeholder-club.jpg"
+                  alt="Golf Club"
+                  fill
+                  className="object-cover"
+                />
+              </div>
+              <div className="p-3">
+                <h3 className="font-semibold">Golf Shoes</h3>
+                <p className="text-gray-600">$129.99</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
     </div>
   );
 }
